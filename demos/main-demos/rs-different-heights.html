@@ -27,7 +27,7 @@ body {
   background: #ca4040;
 }
 .blue-slide {
-  background: url('img/stripes.png') fixed repeat 0 0;
+  background: url('img/stripes.png') repeat 0 0;
   background-size: cover;
 }
 .orange-slide {
@@ -100,6 +100,9 @@ body {
   <script>
   $('.swiper-container').height($(window).height());
   var mySwiper = new Swiper('.swiper-container',{
+    onTouchMove: function (object) {
+      console.log(object);
+    },
     pagination: '.pagination',
     calculateHeight: true,
     visibilityFullFit: true,
