@@ -14,9 +14,10 @@ body {
 }
 .swiper-container {
   width: 660px;
-  height: 250px;
+  height: 100%;
   color: #fff;
   text-align: center;
+  overflow: auto !important;
 }
 .swiper-slide {
   height: 250px;
@@ -26,7 +27,8 @@ body {
   background: #ca4040;
 }
 .blue-slide {
-  background: url('img/stripes.png');
+  background: url('img/stripes.png') fixed repeat 0 0;
+  background-size: cover;
 }
 .orange-slide {
   background: #ff8604;
@@ -96,6 +98,7 @@ body {
   <script src="js/jquery-1.10.1.min.js"></script>
   <script src="js/idangerous.swiper-2.1.min.js"></script>
   <script>
+  $('.swiper-container').height($(window).height());
   var mySwiper = new Swiper('.swiper-container',{
     pagination: '.pagination',
     calculateHeight: true,
